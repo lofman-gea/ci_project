@@ -8,7 +8,7 @@
  | make sure they don't make it to production. And save us hours of
  | painful debugging.
  |
- | If you set 'display_errors' to '1', CI4's detailed error report will show.
+ | If you set 'display_errors' to '1', c1's detailed error report will show.
  */
 error_reporting(E_ALL);
 ini_set('display_errors', '1');

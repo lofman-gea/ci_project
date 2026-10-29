@@ -1,0 +1,259 @@
+h1 {
+    text-align: center;
+}
+
+.sampul {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+}
+
+table th,
+table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+table td {
+    padding-top: 20px;
+}
+
+
+
+
+
+/* Halaman daftar komik */
+.komik-container {
+    padding: 25px;
+    color: #212529;
+}
+
+.judul-halaman {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.tabel-komik {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: collapse;
+}
+
+.tabel-komik th {
+    padding: 18px 12px;
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tabel-komik td {
+    padding: 18px 12px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.sampul-komik {
+    width: 135px;
+    height: 176px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.sampul-komik:hover {
+    transform: scale(1.04);
+}
+
+/* Tombol detail */
+.btn-detail {
+    background-color: #198754;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-detail:hover {
+    background-color: #146c43;
+}
+
+/* Latar belakang modal */
+.overlay-detail {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.overlay-detail.aktif {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+body.modal-terbuka {
+    overflow: hidden;
+}
+
+/* Kartu detail mengambang */
+.kartu-detail {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s ease;
+}
+
+.overlay-detail.aktif .kartu-detail {
+    transform: translateY(0) scale(1);
+}
+
+/* Tombol X */
+.tombol-x {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #6c757d;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.tombol-x:hover {
+    color: #212529;
+}
+
+/* Bagian gambar dan judul */
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding-right: 15px;
+}
+
+.detail-header img {
+    width: 135px;
+    height: 177px;
+    object-fit: cover;
+    border-radius: 5px;
+    background: #f1f1f1;
+    flex-shrink: 0;
+}
+
+.detail-header h2 {
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    overflow-wrap: anywhere;
+}
+
+.detail-header p {
+    color: #6c757d;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Informasi database */
+.detail-body {
+    border-top: 1px solid #e9ecef;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.detail-item span {
+    color: #6c757d;
+    flex: 0 0 42%;
+}
+
+.detail-item strong {
+    color: #212529;
+    font-weight: 600;
+    text-align: right;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Tombol tutup */
+.btn-tutup {
+    margin-top: 20px;
+    padding: 9px 18px;
+    color: #ffffff;
+    background: #6c757d;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-tutup:hover {
+    background: #565e64;
+}
+
+/* Tampilan HP */
+@media (max-width: 576px) {
+    .komik-container {
+        padding: 12px;
+    }
+
+    .judul-halaman {
+        font-size: 29px;
+        margin-bottom: 20px;
+    }
+
+    .sampul-komik {
+        width: 90px;
+        height: 120px;
+    }
+
+    .kartu-detail {
+        padding: 20px;
+        max-height: 90vh;
+    }
+
+    .detail-header {
+        gap: 12px;
+    }
+
+    .detail-header img {
+        width: 100px;
+        height: 135px;
+    }
+
+    .detail-header h2 {
+        font-size: 19px;
+    }
+
+    .detail-item {
+        gap: 10px;
+        font-size: 14px;
+    }
+}
